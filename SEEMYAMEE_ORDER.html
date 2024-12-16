@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Orders</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container my-5">
+    <h1 class="text-center mb-4">Your Orders</h1>
+
+    <div id="order-items" class="mb-4">
+      <!-- Ordered items will be dynamically rendered here -->
+    </div>
+
+    <div class="d-flex justify-content-between">
+      <a href="SEEMYAMEE.html" class="btn btn-primary">Back to Shopping</a>
+      <button class="btn btn-danger" onclick="clearOrders()">Clear All Orders</button>
+    </div>
+  </div>
+
+  <script>
+    // Fetch orders from localStorage
+    const orders = JSON.parse(localStorage.getItem('orders')) || [];
+    const orderItemsContainer = document.getElementById('order-items');
+
+    // Function to render orders on the page
+    function renderOrders() {
+      orderItemsContainer.innerHTML = ''; // Clear the container
+
+      if (orders.length > 0) {
+        orders.forEach((item, index) => {
+          const div = document.createElement('div');
+          div.classList.add('border', 'p-3', 'mb-2');
+          div.innerHTML = `
+            <p><b>${item.name}</b> - ₹${item.price}</p>
+            <p class="text-muted">Order #${index + 1}</p>
+          `;
+          orderItemsContainer.appendChild(div);
+        });
+      } else {
+        orderItemsContainer.innerHTML = '<p class="text-center">You have no orders yet.</p>';
+      }
+    }
+
+    // Function to clear all orders
+    function clearOrders() {
+      if (confirm("Are you sure you want to clear all orders?")) {
+        localStorage.removeItem('orders'); // Remove orders from localStorage
+        orders.length = 0; // Clear the array
+        renderOrders(); // Re-render the page
+      }
+    }
+
+    // Initialize the page by rendering orders
+    renderOrders();
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

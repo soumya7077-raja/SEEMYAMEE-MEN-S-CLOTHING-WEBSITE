@@ -1,0 +1,71 @@
+#name{
+    font-size: 40px;
+    font-family: 'Times New Roman', Times, serif;
+    background:url("Screenshot 2024-12-13 102634.png");
+    background-size:cover;
+    background-repeat: repeat;
+    -webkit-background-clip:text;
+    background-clip: var();
+    -webkit-text-fill-color:transparent;
+    
+}
+
+.custom-navbar {
+    background-color: #f8f9fa;
+    padding: 25px 20px;
+}
+
+.custom-navbar .navbar-toggler {
+    border: none;
+}
+
+.custom-navbar .form-control {
+    border-radius: 5px;
+}
+
+.custom-navbar .btn-search {
+    border: none;
+    background: none;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    transition: transform 0.2s;
+}
+
+#sf {
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+}
+
+ /* Optional: Customize button and input height and padding */
+input.form-control-lg {
+height: 40px;
+width:390px;
+font-size: 1.2rem;
+}
+button.btn-lg {
+height: 50px;
+font-size: 1.2rem;
+}
+
+#SI{
+    border-top-left-radius:25px;
+    border-top-right-radius:25px ;
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+}
+#SU{
+    border-top-left-radius:25px;
+    border-top-right-radius:25px ;
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+}
+#SI:hover,#SU:hover {
+    background-color: yellow;
+    color:black;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+
+
